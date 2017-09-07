@@ -1,17 +1,20 @@
 package test.com.BookTesting;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Iterator;
+import static org.junit.Assert.*;
 
-import org.junit.Before;
+
 import org.junit.Test;
-
-import junit.framework.TestCase;
 
 public class BookArrayTest {
 
-	@Before
+//	@BeforeClass
+//	public static void beforeTestMethod() {
+//	
+//	}
+
+	@Test
+	public void testGenre() {
+
 		Service serv = new Service();
 		Book book1 = new Book(1,"Book 1","Author 1","Crime");
 		serv.addItem(book1);
@@ -21,20 +24,17 @@ public class BookArrayTest {
 		serv.addItem(book3);
 		Book book4 = new Book(4,"Book 4","Author 4","Horror");
 		serv.addItem(book4);
-	
-
-	@Test
-	public void testBooksHorror() {
-		int countHorror = 2;
-		assertEquals(countHorror,getNumberOfGenres("Horror"));
-
+		Book book5 = new Book(5,"Book 5","Author 5","Horror");
+		serv.addItem(book5);
+		
+		long countHorror = 3;
+		String countCrimeHorror = "Horror";
+		assertEquals(countHorror,serv.getNumberOfGenres(countCrimeHorror));
+		
+		long countCrime = 2;
+		String countCrimeGenre = "Crime";
+		assertEquals(countCrime,serv.getNumberOfGenres(countCrimeGenre));
+		
 	}
-	
-	@Test
-	public void testBooksCrime() {
-		int countHorror = 2;
-		assertEquals(countHorror,getNumberOfGenres("Crime"));
 
-	}
-	
 }

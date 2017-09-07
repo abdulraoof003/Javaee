@@ -1,10 +1,12 @@
 package test.com.BookTesting;
 
-import java.io.File;
-
 import java.util.HashMap;
 
 public class Service {
+
+	public void helloWord() {
+		System.out.println("Hello");
+	}
 
 	int key = 1;
 
@@ -19,15 +21,11 @@ public class Service {
 	}
 
 	public long getNumberOfGenres(String genre) {
-		return map.values().stream().filter(eachBook -> eachBook.getGenre().equals(genre)).count();
+		return (map.values().stream().filter(eachBook -> eachBook.getGenre().equals(genre)).count());
 	}
-
-	// Need to include java 8 in maven to work.
-	// public long searchGenreHorror(String genre) {
-	// int count = 0;
-	// for (book eachbook : bookMap.values() {
-	// if (eachboo)
-	// }
-	// }
+	
+	public void helloWorld() {
+		System.out.println("Hello World");
+	}
 
 }

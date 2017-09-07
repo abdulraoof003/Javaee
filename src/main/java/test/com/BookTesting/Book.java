@@ -11,7 +11,7 @@ public class Book {
 	private String genre;
 
 	public Book(int itemId, String name, String author, String genre) {
-		super();
+//		super();
 		this.itemId = itemId;
 		this.name = name;
 		this.author = author;
